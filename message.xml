@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data grouped="1">
+        <record model="ir.message" id="msg_no_transit_location">
+            <field name="text">This shipment cannot be used because it does not have the transit field "%(shipment)s"</field>
+        </record>
+    </data>
+</tryton>

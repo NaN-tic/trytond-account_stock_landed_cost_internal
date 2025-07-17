@@ -1,0 +1,31 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.landed_cost,shipments_internal:"
+msgid "Internal Shipments"
+msgstr "Albaranes internos"
+
+msgctxt "field:account.landed_cost-stock.shipment.internal,landed_cost:"
+msgid "Landed Cost"
+msgstr "Coste de recepción"
+
+msgctxt "field:account.landed_cost-stock.shipment.internal,shipment:"
+msgid "Internal Shipment"
+msgstr "Albarán interno"
+
+msgctxt "field:stock.location,transit:"
+msgid "Transit"
+msgstr "Tránsito"
+
+msgctxt "model:account.landed_cost-stock.shipment.internal,name:"
+msgid "Landed Cost Shipment Internal"
+msgstr "Coste de recepción de albarán interno"
+
+msgctxt "model:ir.message,text:msg_no_transit_location"
+msgid ""
+"This shipment cannot be used because it does not have the transit field "
+"\"%(shipment)s\""
+msgstr ""
+"El albarán no puede usarse porque no tiene el campo \"tránsito\" "
+"\"%(shipment)s\""
