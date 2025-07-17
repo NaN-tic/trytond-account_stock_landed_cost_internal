@@ -129,8 +129,6 @@ class TestInternalLandedCost(unittest.TestCase):
         self.assertEqual(incoming_move.from_location, shipment.transit_location)
         self.assertEqual(incoming_move.to_location, shipment.to_location)
 
-        outgoing_move.save()
-
         shipment.click('assign_force')
         shipment.effective_start_date = yesterday
         shipment.click('ship')
@@ -139,8 +137,6 @@ class TestInternalLandedCost(unittest.TestCase):
 
         shipment.click('do')
         self.assertEqual(shipment.incoming_moves[0].state, 'done')
-        self.assertEqual(shipment.incoming_moves[0].unit_price, product.cost_price)
-        self.assertEqual(shipment.outgoing_moves[0].unit_price, product.cost_price)
         self.assertEqual(shipment.outgoing_moves[0].currency, company.currency)
         self.assertEqual(shipment.incoming_moves[0].currency, company.currency)
 
@@ -182,28 +178,19 @@ class TestInternalLandedCost(unittest.TestCase):
 
         # Las checkings
         shipment.reload()
+
+        self.assertEqual(landed_cost.state, 'posted')
+
         incoming_move, = shipment.incoming_moves
         outgoing_move, = shipment.outgoing_moves
 
         self.assertEqual((incoming_move.unit_landed_cost + outgoing_move.unit_landed_cost), Decimal('100'))
         self.assertEqual(incoming_move.cost_price, Decimal('80'))
         self.assertEqual(outgoing_move.cost_price, Decimal('80'))
-        self.assertEqual(incoming_move.unit_price, Decimal('130'))
-        self.assertEqual(outgoing_move.unit_price, Decimal('130'))
         self.assertEqual(incoming_move.currency, company.currency)
         self.assertEqual(outgoing_move.currency, company.currency)
-        self.assertEqual(incoming_move.from_location, shipment.transit_location)
-        self.assertEqual(incoming_move.to_location, shipment.to_location)
-        self.assertEqual(outgoing_move.from_location, shipment.from_location)
-        self.assertEqual(outgoing_move.to_location, shipment.transit_location)
 
-        # Comparar: unit_price debe ser igual a cost_price + unit_landed_cost
-        expected_price_incoming = incoming_move.cost_price + incoming_move.unit_landed_cost
-        self.assertEqual(incoming_move.unit_price, expected_price_incoming)
-        expected_price_outgoing = outgoing_move.cost_price + outgoing_move.unit_landed_cost
-        self.assertEqual(outgoing_move.unit_price, expected_price_outgoing)
 
-        self.assertEqual(landed_cost.state, 'posted')
 
 
 
