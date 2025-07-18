@@ -12,7 +12,7 @@ class LandedCost(metaclass=PoolMeta):
         'account.landed_cost-stock.shipment.internal', 'landed_cost', 'shipment',
         'Internal Shipments',
         domain=[
-            ('company', '=', Eval('company')),
+            ('company', '=', Eval('company', -1)),
             ('state', 'in', ['done']),
         ],
         states={
