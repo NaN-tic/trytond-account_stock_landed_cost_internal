@@ -31,9 +31,9 @@ class Move(metaclass=PoolMeta):
 
                 if state == 'done':
                     if from_location.transit or to_location.transit:
-                        if 'unit_price' not in new_values and move.unit_price is None:
+                        if new_values.get('unit_price') is None and move.unit_price is None:
                             new_values['unit_price'] = Decimal(0)
-                        if 'currency' not in new_values and move.currency is None:
+                        if new_values.get('currency') is None and move.currency is None:
                             currency = move.company.currency
                             if move.currency != currency:
                                 new_values['currency'] = currency.id
