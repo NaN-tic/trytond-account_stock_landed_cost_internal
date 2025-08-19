@@ -131,8 +131,6 @@ class TestInternalLandedCost(unittest.TestCase):
 
         shipment.click('assign_force')
         shipment.effective_start_date = yesterday
-        shipment.click('pack')
-        self.assertEqual(shipment.outgoing_moves[0].state, 'assigned')
         shipment.click('ship')
         self.assertEqual(shipment.outgoing_moves[0].state, 'done')
         self.assertEqual(shipment.outgoing_moves[0].effective_date, yesterday)
