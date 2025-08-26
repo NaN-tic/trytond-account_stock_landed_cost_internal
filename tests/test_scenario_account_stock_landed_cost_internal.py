@@ -92,6 +92,11 @@ class TestInternalLandedCost(unittest.TestCase):
         warehouse1.save()
         warehouse2.save()
 
+        # Set transit bool in Transit location
+        transit_location, = Location.find([('name', '=', 'Transit')])
+        transit_location.transit = True
+        transit_location.save()
+
         # Lead time for transit
         LeadTime = Model.get('stock.location.lead_time')
         lead_time = LeadTime()
@@ -108,9 +113,6 @@ class TestInternalLandedCost(unittest.TestCase):
         shipment.to_location = warehouse2.storage_location
         shipment.planned_date = tomorrow
         shipment.save()
-        transit_location = shipment.transit_location
-        transit_location.transit = True
-        transit_location.save()
 
         move = shipment.moves.new()
         move.product = product
@@ -189,8 +191,3 @@ class TestInternalLandedCost(unittest.TestCase):
         self.assertEqual(outgoing_move.cost_price, Decimal('80'))
         self.assertEqual(incoming_move.currency, company.currency)
         self.assertEqual(outgoing_move.currency, company.currency)
-
-
-
-
-
