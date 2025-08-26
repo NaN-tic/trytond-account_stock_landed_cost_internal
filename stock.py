@@ -86,8 +86,7 @@ class Move(metaclass=PoolMeta):
 class Location(metaclass=PoolMeta):
     __name__ = 'stock.location'
 
-    transit = fields.Boolean(
-        "Transit",
+    transit = fields.Boolean('Transit',
         states={
             'invisible': Eval('type') != 'storage',
         })
