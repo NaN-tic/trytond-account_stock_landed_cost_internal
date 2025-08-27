@@ -8,5 +8,29 @@ this repository contains the full copyright notices and license terms. -->
             <field name="inherit" ref="account_stock_landed_cost.landed_cost_view_form"/>
             <field name="name">landed_cost_internal_form</field>
         </record>
+
+        <record model="ir.action.act_window" id="act_landed_cost_form_shipment_internal">
+            <field name="name">Landed Costs</field>
+            <field name="res_model">account.landed_cost</field>
+            <field
+                name="domain"
+                eval="[('shipments_internal', 'in', Eval('active_ids'))]"
+                pyson="1"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_landed_cost_form_shipment_internal_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="account_stock_landed_cost.landed_cost_view_list"/>
+            <field name="act_window" ref="act_landed_cost_form_shipment_internal"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_landed_cost_form_shipment_internal_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="account_stock_landed_cost.landed_cost_view_form"/>
+            <field name="act_window" ref="act_landed_cost_form_shipment_internal"/>
+        </record>
+        <record model="ir.action.keyword" id="act_landed_cost_form_shipment_internal_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">stock.shipment.internal,-1</field>
+            <field name="action" ref="act_landed_cost_form_shipment_internal"/>
+        </record>
     </data>
 </tryton>

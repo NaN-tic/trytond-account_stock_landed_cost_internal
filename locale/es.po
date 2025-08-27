@@ -22,6 +22,10 @@ msgctxt "model:account.landed_cost-stock.shipment.internal,name:"
 msgid "Landed Cost Shipment Internal"
 msgstr "Coste de recepción de albarán interno"
 
+msgctxt "model:ir.action,name:act_landed_cost_form_shipment_internal"
+msgid "Landed Costs"
+msgstr "Costes de recepción"
+
 msgctxt "model:ir.message,text:msg_no_transit_location"
 msgid ""
 "This shipment cannot be used because it does not have the transit field "
