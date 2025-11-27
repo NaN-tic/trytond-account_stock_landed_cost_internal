@@ -2,7 +2,7 @@ from trytond.pool import PoolMeta
 from trytond.model import fields, ModelSQL
 from trytond.pyson import Eval
 from trytond.i18n import gettext
-from trytond.exceptions import UserError
+from trytond.model.exceptions import ValidationError
 
 
 class LandedCost(metaclass=PoolMeta):
@@ -28,7 +28,7 @@ class LandedCost(metaclass=PoolMeta):
     def check_shipments_internal(self):
         for shipment in self.shipments_internal:
             if not shipment.transit_location:
-                raise UserError(gettext('account_stock_landed_cost_internal.msg_no_transit_location',
+                raise ValidationError(gettext('account_stock_landed_cost_internal.msg_no_transit_location',
                     shipment=shipment.rec_name))
 
 
