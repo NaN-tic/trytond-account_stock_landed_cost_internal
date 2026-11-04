@@ -1,0 +1,39 @@
+#
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:account.landed_cost,shipments_internal:"
+msgid "Internal Shipments"
+msgstr "内部发货"
+
+msgctxt "field:account.landed_cost-stock.shipment.internal,landed_cost:"
+msgid "Landed Cost"
+msgstr "到岸成本"
+
+msgctxt "field:account.landed_cost-stock.shipment.internal,shipment:"
+msgid "Internal Shipment"
+msgstr "内部发货"
+
+msgctxt "field:stock.location,transit:"
+msgid "Transit"
+msgstr "中转"
+
+msgctxt "model:account.landed_cost-stock.shipment.internal,name:"
+msgid "Landed Cost Shipment Internal"
+msgstr "内部调拨到岸成本"
+
+msgctxt "model:ir.action,name:act_landed_cost_form_shipment_internal"
+msgid "Landed Costs"
+msgstr "到岸成本"
+
+#, python-format
+msgctxt "model:ir.message,text:msg_no_transit_location"
+msgid ""
+"This shipment cannot be used because it does not have the transit field "
+"\"%(shipment)s\""
+msgstr "此调拨单没有中转字段，无法使用：“%(shipment)s”"
