@@ -1,0 +1,40 @@
+#
+msgid ""
+msgstr ""
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:account.landed_cost,shipments_internal:"
+msgid "Internal Shipments"
+msgstr "ការដឹកជញ្ជូនផ្ទៃក្នុង"
+
+msgctxt "field:account.landed_cost-stock.shipment.internal,landed_cost:"
+msgid "Landed Cost"
+msgstr "ថ្លៃដើមសរុបដល់គោលដៅ"
+
+msgctxt "field:account.landed_cost-stock.shipment.internal,shipment:"
+msgid "Internal Shipment"
+msgstr "ការដឹកជញ្ជូនផ្ទៃក្នុង"
+
+msgctxt "field:stock.location,transit:"
+msgid "Transit"
+msgstr "ឆ្លងកាត់"
+
+msgctxt "model:account.landed_cost-stock.shipment.internal,name:"
+msgid "Landed Cost Shipment Internal"
+msgstr "ថ្លៃដើមសរុបដល់គោលដៅនៃការដឹកជញ្ជូនផ្ទៃក្នុង"
+
+msgctxt "model:ir.action,name:act_landed_cost_form_shipment_internal"
+msgid "Landed Costs"
+msgstr "ថ្លៃដើមរួមបញ្ចូលការនាំចូល"
+
+#, python-format
+msgctxt "model:ir.message,text:msg_no_transit_location"
+msgid ""
+"This shipment cannot be used because it does not have the transit field "
+"\"%(shipment)s\""
+msgstr ""
+"មិនអាចប្រើការដឹកជញ្ជូននេះបានទេ ព្រោះវាមិនមានវាលទីតាំងឆ្លងកាត់ «%(shipment)s»។"
